@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index', [
-        "hello" => "World"
-    ]);
+Route::get('/migrate', function () {
+    Artisan::call('migrate', array('--path' => 'database/migrations', '--force' => true));
+    return view('index');
 });
+
+
+Route::get('/articles', 'ArticleController@index');

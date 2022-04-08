@@ -9,7 +9,7 @@
 
 <body>
     <div>
-        Hello {{ $hello }}
+        Hello World
     </div>
 </body>
 
