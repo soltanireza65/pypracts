@@ -9,4 +9,8 @@ php artisan make:controller ArticleController --api --resource --model=Article -
 php artisan make:controller ArticleController --api --resource --model=Article --controller-namespace=App\Http\Controllers\Admin --route-group=admin --route-name=admin.articles --route-prefix=admin --route-middleware=auth --route-middleware=admin
 php artisan make:model Article --migration --resource
 
+php artisan make:model Project -mc
+
 php artisan make:migration create_articles_table --create=articles
+
+

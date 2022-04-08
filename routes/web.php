@@ -16,8 +16,10 @@ use Symfony\Component\Process\Process;
 |
 */
 
+
+// TODO: Remove in production
 Route::get('/migrate', function () {
-    Artisan::call('migrate', array('--path' => 'database/migrations', '--force' => true));
+    Artisan::call('migrate:fresh', array('--path' => 'database/migrations', '--force' => true));
     return view('index');
 });
 
