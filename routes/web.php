@@ -13,8 +13,10 @@ Route::get('/migrate', function () {
 });
 
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
-Route::get('/articles', [ArticleController::class, 'index']);
+Route::view('/{path?}', 'app');
+
+// Route::get('/articles', [ArticleController::class, 'index']);
